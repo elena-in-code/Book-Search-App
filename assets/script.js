@@ -46,7 +46,7 @@ function findMatches(wordToMatch, books) {
 	return books.filter(book => {
 
 	var regex = new RegExp(wordToMatch, 'gi');
-	return book.title.match(regex) || book.author.match(regex)
+	return book.title.match(regex) || book.author.match(regex) || book.metadata.match(regex)
 	});
 }
 
@@ -55,7 +55,8 @@ function displayMatches (){
 	var html = matchArray.map(book => {
 		return ` 
 			<li>
-				<span class="name"> Título: ${book.title} <br> Autor: ${book.author}</span>
+				<span class="name"> Título: ${book.title} <br> Autor: ${book.author}
+				</span>
 				
 			</li>
 		`;
