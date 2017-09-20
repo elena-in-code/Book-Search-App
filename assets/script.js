@@ -25,14 +25,17 @@ btn.addEventListener("click", function() {
 // data = our array of objects
 function renderHTML(data){
 	var htmlString = "";
-		
+	
 	//loop to show full collection
 	for (i = 0; i < data.length; i++) {
+		//Metadata break into isbn & genre:
 		var meta = data[i].metadata;
 		var isbn = meta.substr(1, 17);
 		var genre = meta.substr(18, 30);
+
+
 		htmlString += "<li>" + "Título: " +  data[i].title + "<br>" + "Autor: " + data[i].author + "<br>" + "ISBN: " + isbn + "<br>" + "Género: " + genre + "</li>";
-		}
+	}
 	// arguments ( where and what) we want to add to html
 	resultContainer.insertAdjacentHTML('beforeend', htmlString);
 }
@@ -50,7 +53,7 @@ function findMatches(wordToMatch, books) {
 	return books.filter(book => {
 
 	var regex = new RegExp(wordToMatch, 'gi');
-	return book.title.match(regex) || book.author.match(regex) || book.metadata.match(regex)
+	return book.title.match(regex) || book.author.match(regex) || book.metadata.match(regex) 
 	});
 }
 
@@ -58,13 +61,20 @@ function displayMatches (){
 	var matchArray = findMatches(this.value, books);
 	
 	var html = matchArray.map(book => {
-		var meta = book.metadata;
+	//Metadata break into isbn & genre:
+	var meta = book.metadata;
 		var isbn = meta.substr(1, 17);
 		var genre = meta.substr(18, 30);
+	//loop to show all user´s names in each book:
+	var nameList = [];
+	for (i = 0; i < book.users.length; i++){
+		var names = book.users[i].name;
+		nameList.push(names);
+	}
 		return ` 
 			<li>
 				<span class="name"> Título: ${book.title} <br> Autor: ${book.author} <br> ISBN: ${isbn} <br> Género: ${genre}
-				</span>
+				<br> Usuarios que han visitado recientemente este recurso: ${nameList} </span>
 				
 			</li>
 		`;
@@ -79,6 +89,8 @@ searchInput.addEventListener('change', displayMatches);
 searchInput.addEventListener('keyup', displayMatches);
 
 //*****************************Lógicas que faltan:
-//añadir a los resultado de las búsquedas que users han visitado cada libro 
+//añadir a los resultado de las búsquedas que users han visitado cada libro en catalogo completo
 //y poder ver de cada user qué otros libros han visitado
+//***********Refactore:
+//clena and DRY code
 
