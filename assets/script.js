@@ -25,9 +25,13 @@ btn.addEventListener("click", function() {
 // data = our array of objects
 function renderHTML(data){
 	var htmlString = "";
+		
 	//loop to show full collection
 	for (i = 0; i < data.length; i++) {
-		htmlString += "<li>" + "Título: " +  data[i].title + "<br>" + "Autor: " + data[i].author + "</li>";
+		var meta = data[i].metadata;
+		var isbn = meta.substr(1, 17);
+		var genre = meta.substr(18, 30);
+		htmlString += "<li>" + "Título: " +  data[i].title + "<br>" + "Autor: " + data[i].author + "<br>" + "ISBN: " + isbn + "<br>" + "Género: " + genre + "</li>";
 		}
 	// arguments ( where and what) we want to add to html
 	resultContainer.insertAdjacentHTML('beforeend', htmlString);
@@ -52,10 +56,14 @@ function findMatches(wordToMatch, books) {
 
 function displayMatches (){
 	var matchArray = findMatches(this.value, books);
+	
 	var html = matchArray.map(book => {
+		var meta = book.metadata;
+		var isbn = meta.substr(1, 17);
+		var genre = meta.substr(18, 30);
 		return ` 
 			<li>
-				<span class="name"> Título: ${book.title} <br> Autor: ${book.author}
+				<span class="name"> Título: ${book.title} <br> Autor: ${book.author} <br> ISBN: ${isbn} <br> Género: ${genre}
 				</span>
 				
 			</li>
@@ -71,8 +79,6 @@ searchInput.addEventListener('change', displayMatches);
 searchInput.addEventListener('keyup', displayMatches);
 
 //*****************************Lógicas que faltan:
-//añadir a la búsqueda la posibilidad de buscar por género literario
-//añadir a la búsqueda la posibilidad de buscar por ISBN
 //añadir a los resultado de las búsquedas que users han visitado cada libro 
 //y poder ver de cada user qué otros libros han visitado
 
