@@ -74,7 +74,7 @@ function displayMatches (){
 		return ` 
 			<li>
 				<span class="name"> Título: ${book.title} <br> Autor: ${book.author} <br> ISBN: ${isbn} <br> Género: ${genre}
-				<br> Usuarios que han visitado recientemente este recurso: ${nameList} </span>
+				<br> Usuarios que han visitado recientemente este recurso: <br> ${nameList} </span>
 				
 			</li>
 		`;
@@ -92,5 +92,5 @@ searchInput.addEventListener('keyup', displayMatches);
 //añadir a los resultado de las búsquedas que users han visitado cada libro en catalogo completo
 //y poder ver de cada user qué otros libros han visitado
 //***********Refactore:
-//clena and DRY code
+//clean and DRY code
 

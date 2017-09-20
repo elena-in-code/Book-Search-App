@@ -50,11 +50,13 @@ h1{
 	flex-direction: row;
 }
 input {
+  width: 200px;
+  height: 30px;
   font-size: .8em;
   text-align: center;
   border-radius: 0.35rem;
-  border: 4px inset rgba(46,61,73,0.35);
- margin: 0 100px;
+  border: 3px inset rgba(46,61,73,0.35);
+  margin: 0 100px;
 }
 input:focus {
   outline: none; 
@@ -67,6 +69,7 @@ input:focus {
 }
 /*Button styling***********/
 button {
+  width: 200px;
   outline: none; 
   height: 40px;
   border-radius: 50px;
@@ -108,3 +111,28 @@ li {
 }
 
 /* AÑADIR MEDIA QUERY para colocar los botones en .search-area {flex-direction: column;}*/
+/* +++++++++++++++++ media queries +++++++++++++++++ */
+@media screen and (max-width: 1000px) {
+  .search-area {
+    padding: 10px;
+  }
+  input{
+    width: 150px;
+    border: 2px inset rgba(46,61,73,0.35);
+    margin: 2px;
+    height: 25px;
+  }
+  button {
+    width: 150px; 
+    height: 30px;
+    font-size: .65em;
+    margin: 5px;
+  }
+  .search-form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+}
+/*WIP still needs more breaking points
+ and a lot os fixing mainly search area*/
