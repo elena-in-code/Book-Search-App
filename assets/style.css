@@ -130,9 +130,7 @@ li {
   opacity: 0;
   transform: scale(.75);
 }
-
-/* AÑADIR MEDIA QUERY para colocar los botones en .search-area {flex-direction: column;}*/
-/* +++++++++++++++++ media queries +++++++++++++++++ */
+/* +++++++++++++++++ media queries +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 @media screen and (max-width: 1008px) {
   .search-area {
     padding: 10px;
@@ -150,10 +148,9 @@ li {
     margin: 5px;
   }
   .search-form {
-  display: flex;
-  flex-direction: column;
-  /*flex-wrap: wrap;*/
-}
+    display: flex;
+    flex-direction: column;
+  }
 }
 @media screen and (max-width: 938px) {
    .search-area {
@@ -169,6 +166,3 @@ li {
     height: 115px;
   }
 }
-
-/*WIP still needs more breaking points
- and a lot os fixing mainly search area*/
