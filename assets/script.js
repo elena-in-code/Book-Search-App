@@ -88,6 +88,9 @@ var suggestions = document.querySelector('#result-container');
 searchInput.addEventListener('change', displayMatches);
 searchInput.addEventListener('keyup', displayMatches);
 
+// btn.addEventListener('click', displayAll);
+//displayAll function not define yet.
+
 //*****************************Lógicas que faltan:
 //añadir a los resultado de las búsquedas que users han visitado cada libro en catalogo completo
 //y poder ver de cada user qué otros libros han visitado
