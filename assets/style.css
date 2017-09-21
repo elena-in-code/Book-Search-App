@@ -97,11 +97,31 @@ li {
   list-style:none;
   font-weight: 700;
   background-color:rgba(243,243,243,.9);
-  border-left:5px double rgba(2,179,228,0.75);
-  border-right:5px double rgba(2,179,228,0.75);
+  border-left:4.5px double rgba(2,179,228,0.75);
+  border-right:4.5px double rgba(2,179,228,0.75);
   color:#333;
   position:relative;
 }
+.recentUsers li {
+  text-align: center;
+  margin:0.1em 2em 0.1em 0em;
+  padding:0.2em ;
+  list-style:none;
+  font-weight: 550;
+  background-color:rgba(253,253,253,.7);
+  border: none;
+  color:#333;
+  position:relative;
+  font-size: .9em;
+}
+.recentUsers {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+.recentUsers li:hover {
+  border-right: 2px solid rgba(183,183,183,.7);
+}
+
 
 /*hide class from js - to hide btn - catalogo completo*************/
 .hide {
