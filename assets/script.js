@@ -10,7 +10,7 @@ var btnReset = document.getElementById("btn-reset");
 btn.addEventListener("click", function() {
 	// AJAX call
 	var ourRequest = new XMLHttpRequest();
-	ourRequest.open('GET', 'http://www.json-generator.com/api/json/get/bPvxqJvOOG?indent=2');
+	ourRequest.open('GET', 'https://raw.githubusercontent.com/elena-in-code/books/master/bookcollection.json');
 	ourRequest.onload = function () {
 		var ourData = JSON.parse(ourRequest.responseText);
 		renderHTML(ourData);
@@ -41,7 +41,7 @@ function renderHTML(data){
 }
 //************************************************************Search**********************************************
 
-var endpoint = 'http://www.json-generator.com/api/json/get/bPvxqJvOOG?indent=2';
+var endpoint = 'https://raw.githubusercontent.com/elena-in-code/books/master/bookcollection.json';
 
 var books = [];
 
