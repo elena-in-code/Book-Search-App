@@ -74,7 +74,7 @@ function displayMatches (){
 		return ` 
 			<li>
 				<span class="name"> Título: ${book.title} <br> Autor: ${book.author} <br> ISBN: ${isbn} <br> Género: ${genre}
-				<br> Usuarios que han visitado recientemente este recurso: <br> ${nameList} </span>
+				<br> Usuarios que han visitado recientemente este recurso: <br> <ul class="recentUsers"><li>${nameList[0]}</li> <li>${nameList[1]}</li> <li>${nameList[2]}</li></ul></span>
 				
 			</li>
 		`;
@@ -94,3 +94,7 @@ searchInput.addEventListener('keyup', displayMatches);
 //***********Refactore:
 //clean and DRY code
 
+// var user = document.querySelector('.recentUsers li');
+		// user.addEventListener("click", function() {
+		// console.log('hello');
+		// });
