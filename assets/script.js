@@ -74,13 +74,28 @@ function displayMatches (){
 		return ` 
 			<li>
 				<span class="name"> Título: ${book.title} <br> Autor: ${book.author} <br> ISBN: ${isbn} <br> Género: ${genre}
-				<br> Usuarios que han visitado recientemente este recurso: <br> <ul class="recentUsers"><li>${nameList[0]}</li> <li>${nameList[1]}</li> <li>${nameList[2]}</li></ul></span>
+				<br> Usuarios que han visitado recientemente este recurso: <br> <ul class="recentUsers"><li class="individualUsers">${nameList[0]}</li> <li class="individualUsers">${nameList[1]}</li> <li class="individualUsers">${nameList[2]}</li></ul></span>
 				
 			</li>
 		`;
 	}).join('');
 	suggestions.innerHTML = html;
 	btn.classList.add("hide");
+
+	// user name click event
+	var btnUser = document.querySelectorAll(".individualUsers");
+		for (var i = 0; i < btnUser.length; i++) {
+		  btnUser[i].addEventListener("click", function() {
+		  	//wip to define var test - to find the match the name of the user that have been clicked
+		  	var test = "Cien años de soledad"
+			var userBooks = books
+			  .filter(x => x.title.indexOf(test) > -1)
+			  .map(x => ` <li>${x.title}</li> <li>${x.author}</li>`);
+
+		  console.log(userBooks);
+		  });
+		}
+
 }
 var searchInput = document.querySelector('.search');
 var suggestions = document.querySelector('#result-container');
@@ -94,7 +109,3 @@ searchInput.addEventListener('keyup', displayMatches);
 //***********Refactore:
 //clean and DRY code
 
-// var user = document.querySelector('.recentUsers li');
-		// user.addEventListener("click", function() {
-		// console.log('hello');
-		// });
