@@ -45,10 +45,6 @@ h1{
 	border-radius: 15px;
 	box-shadow: 0px -2px 0px 0px rgba(223,223,223,.9), 2px 8px 25px -10px rgba(0,0,0,0.75);
 }
-.search-form {
-	display: flex;
-	flex-direction: row;
-}
 input {
   width: 200px;
   height: 30px;
@@ -123,47 +119,36 @@ li {
   border-right: 2px solid rgba(183,183,183,.7);
   cursor: pointer;
 }
-
-
-/*hide class from js - to hide btn - catalogo completo*************/
-.hide {
-  visibility: hidden;
-  opacity: 0;
-  transform: scale(.75);
-}
 /* +++++++++++++++++ media queries +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-@media screen and (max-width: 1008px) {
+@media screen and (max-width: 1020px) {
   .search-area {
     padding: 10px;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    width: 70vw;
+    height: 125px;
   }
   input{
-    width: 150px;
+    width: 48vw;
     border: 2px inset rgba(46,61,73,0.35);
-    margin: 2px;
+    margin: 2px auto;
     height: 25px;
   }
   button {
-    width: 150px; 
+    width: 48vw; 
     height: 30px;
-    font-size: .65em;
-    margin: 5px;
+    font-size: .75em;
+    margin: 5px auto;
   }
   .search-form {
-    display: flex;
-    flex-direction: column;
+    text-align: center;
   }
 }
-@media screen and (max-width: 938px) {
-   .search-area {
-    padding: 10px;
-    width: 60vw;
-    height: 50px;
+@media screen and (max-width: 608px) {
+  input{
+    width: 68vw;
   }
-}
-@media screen and (max-width: 530px) {
-   .search-area {
-    padding: 10px;
-    width: 60vw;
-    height: 115px;
+  button {
+    width: 68vw; 
   }
 }
