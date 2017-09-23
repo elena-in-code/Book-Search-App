@@ -86,11 +86,11 @@ function displayMatches (){
 	var btnUser = document.querySelectorAll(".individualUsers");
 		for (var i = 0; i < btnUser.length; i++) {
 		  btnUser[i].addEventListener("click", function() {
-		  	//wip to define var test - to find the match the name of the user that have been clicked
-		  	var test = "Cien años de soledad"
+		  	//wip to define var clickedUser - to find the match the name of the user that have been clicked
+		  	var clickedUser = this.innerText
 			var userBooks = books
-			  .filter(x => x.title.indexOf(test) > -1)
-			  .map(x => ` <li>${x.title}</li> <li>${x.author}</li>`);
+			  .filter(book => book.users.some(user => user.name.indexOf(clickedUser) > -1))
+			  .map(book => ` <li>${book.title}, ${book.author}</li>`);
 
 		  console.log(userBooks);
 		  });
