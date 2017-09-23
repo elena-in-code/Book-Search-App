@@ -61,16 +61,16 @@ function displayMatches (){
 	var matchArray = findMatches(this.value, books);
 	
 	var html = matchArray.map(book => {
-	//Metadata break into isbn & genre:
-	var meta = book.metadata;
+		//Metadata break into isbn & genre:
+		var meta = book.metadata;
 		var isbn = meta.substr(1, 17);
 		var genre = meta.substr(18, 30);
-	//loop to show all user´s names in each book:
-	var nameList = [];
-	for (i = 0; i < book.users.length; i++){
-		var names = book.users[i].name;
-		nameList.push(names);
-	}
+		//loop to show all user´s names in each book:
+		var nameList = [];
+		for (i = 0; i < book.users.length; i++){
+			var names = book.users[i].name;
+			nameList.push(names);
+		}
 		return ` 
 			<li>
 				<span class="name"> Título: ${book.title} <br> Autor: ${book.author} <br> ISBN: ${isbn} <br> Género: ${genre}
@@ -90,13 +90,15 @@ function displayMatches (){
 		  	var clickedUser = this.innerText
 			var userBooks = books
 			  .filter(book => book.users.some(user => user.name.indexOf(clickedUser) > -1))
-			  .map(book => ` <li>${book.title}, ${book.author}</li>`);
+			  .map(book => `<li>${book.title}, ${book.author}</li>`);
 
-		  console.log(userBooks);
+		  	userBookList.innerHTML = userBooks;
 		  });
+		
 		}
 
 }
+var userBookList = document.querySelector('.user-book-list');
 var searchInput = document.querySelector('.search');
 var suggestions = document.querySelector('#result-container');
 
