@@ -30,7 +30,7 @@
       <li>List of users that recently visited the book</li>
     </ul>
   </li>
-  <li>Clicking on a user name will display a pop-up list of books that this particular user has also visited. Use the "X" on the left top corner to close this list</li>
+  <li>Clicking on a user name will display a pop-up list of books that this particular user has also visited. Use the "X" on the right top corner to close this list</li>
 </ul>
 <p>The information that will be displayed by the App could be seen in the JSON format <a href="https://gist.githubusercontent.com/finizen/6f5d574cec11112342c552fe6fa64a8a/raw/4cf357afb82e6baae7fd06c5a7c3990d1c0977f6/booksV1.json">here</a>, it is not neccesarily real</p>
 
