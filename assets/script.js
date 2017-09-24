@@ -17,7 +17,7 @@ var endpoint = 'https://raw.githubusercontent.com/elena-in-code/books/master/boo
 //empty data var
 var books = [];
 
-//event listener for search
+//eventlisteners for search
 searchInput.addEventListener('change', displayMatches);
 searchInput.addEventListener('keyup', displayMatches);
 
@@ -66,7 +66,6 @@ function displayMatches (){
 	}).join('');
 	resultContainer.innerHTML = html;
 	
-
 	// user name click event
 	var btnUser = document.querySelectorAll(".individualUsers");
 		for (var i = 0; i < btnUser.length; i++) {
@@ -78,10 +77,12 @@ function displayMatches (){
 			  .map(book => `<li>${book.title} de ${book.author}`);
 
 		  	userBookList.innerHTML = userBooks;
+		  	//Show the recentUserContainerInfo
 		  	recentUserContainerInfo.classList.remove("hide");
 		  });	
 		}
 }
+//hide the recentUserContainerInfo
 btnRemove.addEventListener("click", function() {
 	recentUserContainerInfo.classList.add("hide");
 });

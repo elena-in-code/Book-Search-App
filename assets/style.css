@@ -143,6 +143,13 @@ li {
   background: rgba(253,253,253,1);
   border: 5px solid rgba(203,203,203,.9);
 }
+h3 {
+  text-align: center;
+  font-size: 1em;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+/*Icon Styling*/
 .remove {
   color: rgba(203,203,203,.9);
   text-align: right;
@@ -150,12 +157,6 @@ li {
 }
 .remove:hover {
   color: rgba(103,103,103,.9);
-}
-h3 {
-  text-align: center;
-  font-size: 1em;
-  margin-top: 2px;
-  margin-bottom: 2px;
 }
 /*hide class from js *************/
 .hide {
