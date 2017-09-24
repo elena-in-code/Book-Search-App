@@ -203,4 +203,14 @@ h3 {
   .search-area {
     margin-left: 12px;
   }
+  .container-banner {
+    height: 120px;
+  }
+  h1{
+    font-size: 1.8em;
+    padding: 5px 20px;
+  }
+  .letter {
+    font-size: 1.3em;
+  }
 }
