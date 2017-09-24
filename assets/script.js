@@ -1,22 +1,27 @@
 // var to target result container
 var suggestions = document.querySelector('#result-container');
+// var to target result container of users list of visited books
+var userBookList = document.querySelector('.user-book-list');
+// var to target result container userBookList + static content inside of it
+var recentUserContainerInfo = document.querySelector('.conatiner-user-info');
 // var to target button "catalogo completo"
 var btn = document.getElementById("btn");
 // var to target button "reset"
 var btnReset = document.getElementById("btn-reset");
-var userBookList = document.querySelector('.user-book-list');
+// var to target input 
 var searchInput = document.querySelector('.search');
+// var to target X  inside of recentUserContainerInfo
+var btnRemove = document.querySelector('.remove');
+//JSON
+var endpoint = 'https://raw.githubusercontent.com/elena-in-code/books/master/bookcollection.json';
+//empty data var
+var books = [];
 
 //event listener for search
 searchInput.addEventListener('change', displayMatches);
 searchInput.addEventListener('keyup', displayMatches);
 
 //************************************************************Search**********************************************
-
-var endpoint = 'https://raw.githubusercontent.com/elena-in-code/books/master/bookcollection.json';
-
-var books = [];
-
 fetch(endpoint)
 	.then(blob => blob.json())
 	.then(data => books.push(...data))
@@ -37,7 +42,7 @@ function displayMatches (){
 		var meta = book.metadata;
 		var isbn = meta.substr(1, 17);
 		var genre = meta.substr(18, 30);
-		//loop to show all user´s names in each book:
+		//loop to show all user´s names that visited each book:
 		var nameList = [];
 		for (i = 0; i < book.users.length; i++){
 			var names = book.users[i].name;
@@ -65,10 +70,13 @@ function displayMatches (){
 			  .map(book => `<li>${book.title} de ${book.author}`);
 
 		  	userBookList.innerHTML = userBooks;
+		  	recentUserContainerInfo.classList.remove("hide");
 		  });	
 		}
 }
-
+btnRemove.addEventListener("click", function() {
+	recentUserContainerInfo.classList.add("hide");
+});
 //************************************************Cátalogo Completo**********************************************
 btn.addEventListener("click", function() {
 	var fullCatalog =  books.map(book => `<li> Título: ${book.title} <br> Autor: ${book.author}`); 

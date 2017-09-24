@@ -56,7 +56,7 @@ input {
 }
 input:focus {
   outline: none; 
-  box-shadow: 0px 28px 6px -20px rgba(0,0,0,.15);
+  box-shadow: 0px 20px 7px -15px rgba(0,0,0,.15);
   transition: all 0.18s ease;
   color: rgba(46,61,73,0.75);
 }
@@ -86,6 +86,7 @@ button:hover {
 /*Result area styling*************************************/
 
 /*ul styling*/
+/*main ul with books results*/
 li {
   text-align: center;
   margin:0.2em 0;
@@ -98,7 +99,7 @@ li {
   color:#333;
   position:relative;
 }
-/*nested ul inside of each book*/
+/*Recent users :: nested ul inside of each book */
 .recentUsers li {
   text-align: center;
   margin:0.1em 2em 0.1em 0em;
@@ -119,6 +120,46 @@ li {
   border-right: 2px solid rgba(183,183,183,.7);
   cursor: pointer;
 }
+/*Book list of books recently visited :: nested ul inside of each recent user*/
+.user-book-list li{
+  text-align: center;
+  margin:0.1em 2em 0.1em 0em;
+  padding:0.2em ;
+  list-style:none;
+  font-weight: 550;
+  background-color:rgba(203,203,203,.4);
+  border: none;
+  color:#333;
+  position:relative;
+  font-size: 1.0em;
+}
+.conatiner-user-info{
+  position: fixed;
+  z-index: 5;
+  top: 255px;
+  border-radius: 15px;
+  height: auto;
+  width: auto;
+  background: rgba(253,253,253,1);
+  border: 5px solid rgba(203,203,203,.9);
+}
+.remove {
+  color: rgba(203,203,203,.9);
+  text-align: right;
+  margin: 8px;
+}
+.remove:hover {
+  color: rgba(103,103,103,.9);
+}
+h3 {
+  text-align: center;
+  font-size: 1em;
+}
+/*hide class from js *************/
+.hide {
+  display: none;
+}
+
 /* +++++++++++++++++ media queries +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 @media screen and (max-width: 1020px) {
   .search-area {
@@ -143,6 +184,11 @@ li {
   .search-form {
     text-align: center;
   }
+  input:focus {
+    box-shadow: 0px 12px 7px -10px rgba(0,0,0,.15);
+  }
+  .conatiner-user-info{
+  top: 310px;
 }
 @media screen and (max-width: 608px) {
   input{
