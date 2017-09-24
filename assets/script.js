@@ -87,8 +87,16 @@ function displayMatches (){
 btnRemove.addEventListener("click", function() {
 	recentUserContainerInfo.classList.add("hide");
 });
+//disable enter when searching
+window.addEventListener('keydown',function(e){
+	if(e.keyIdentifier=='U+000A'||e.keyIdentifier=='Enter'||e.keyCode==13 ||e.keyCode === 10){
+			e.preventDefault();
+			return false;
+	}
+},true);
 //************************************************Cátalogo Completo**********************************************
 btn.addEventListener("click", function() {
 	var fullCatalog =  books.map(book => `<li> Título: ${book.title} <br> Autor: ${book.author}`); 
 	resultContainer.innerHTML = fullCatalog;
 });
+
