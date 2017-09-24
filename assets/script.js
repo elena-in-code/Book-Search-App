@@ -1,5 +1,5 @@
 // var to target result container
-var suggestions = document.querySelector('#result-container');
+var resultContainer = document.querySelector('#result-container');
 // var to target result container of users list of visited books
 var userBookList = document.querySelector('.user-book-list');
 // var to target result container userBookList + static content inside of it
@@ -50,13 +50,21 @@ function displayMatches (){
 		}
 		return ` 
 			<li>
-				<span class="name"> Título: ${book.title} <br> Autor: ${book.author} <br> ISBN: ${isbn} <br> Género: ${genre}
-				<br> Usuarios que han visitado recientemente este recurso: <br> <ul class="recentUsers"><li class="individualUsers">${nameList[0]}</li> <li class="individualUsers">${nameList[1]}</li> <li class="individualUsers">${nameList[2]}</li></ul></span>
-				
+				<span class="name"> Título: ${book.title} <br>
+					 Autor: ${book.author} <br>
+					 ISBN: ${isbn} <br> 
+					 Género: ${genre} <br>
+					 Usuarios que han visitado recientemente este recurso: <br>
+					 <ul class="recentUsers">
+					 	<li class="individualUsers">${nameList[0]}</li> 
+					 	<li class="individualUsers">${nameList[1]}</li> 
+					 	<li class="individualUsers">${nameList[2]}</li>
+					 </ul>
+				</span>
 			</li>
 		`;
 	}).join('');
-	suggestions.innerHTML = html;
+	resultContainer.innerHTML = html;
 	
 
 	// user name click event
@@ -80,5 +88,5 @@ btnRemove.addEventListener("click", function() {
 //************************************************Cátalogo Completo**********************************************
 btn.addEventListener("click", function() {
 	var fullCatalog =  books.map(book => `<li> Título: ${book.title} <br> Autor: ${book.author}`); 
-	suggestions.innerHTML = fullCatalog;
+	resultContainer.innerHTML = fullCatalog;
 });
