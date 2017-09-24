@@ -48,20 +48,21 @@ function displayMatches (){
 			var names = book.users[i].name;
 			nameList.push(names);
 		}
-		return ` 
-			<li>
-				<span class="name"> Título: ${book.title} <br>
-					 Autor: ${book.author} <br>
-					 ISBN: ${isbn} <br> 
-					 Género: ${genre} <br>
-					 Usuarios que han visitado recientemente este recurso: <br>
-					 <ul class="recentUsers">
-					 	<li class="individualUsers">${nameList[0]}</li> 
-					 	<li class="individualUsers">${nameList[1]}</li> 
-					 	<li class="individualUsers">${nameList[2]}</li>
-					 </ul>
-				</span>
-			</li>
+		return `
+				<li>
+					<span class="name"> 
+						 Título: ${book.title} <br>
+						 Autor: ${book.author} <br>
+						 ISBN: ${isbn} <br> 
+						 Género: ${genre} <br>
+						 Usuarios que han visitado recientemente este recurso: <br>
+						 <ul class="recentUsers">
+						 	<li class="individualUsers">${nameList[0]}</li> 
+						 	<li class="individualUsers">${nameList[1]}</li> 
+						 	<li class="individualUsers">${nameList[2]}</li>
+						 </ul>
+					</span>
+				</li>
 		`;
 	}).join('');
 	resultContainer.innerHTML = html;
@@ -69,7 +70,7 @@ function displayMatches (){
 	// user name click event
 	var btnUser = document.querySelectorAll(".individualUsers");
 		for (var i = 0; i < btnUser.length; i++) {
-		  btnUser[i].addEventListener("click", function() {
+		  btnUser[i].addEventListener("mousedown", function() {
 		  	//user clicked match and show the other books seen by the same user:
 		  	var clickedUser = this.innerText
 			var userBooks = books
