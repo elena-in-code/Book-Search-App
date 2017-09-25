@@ -1,6 +1,7 @@
 <h1><a href="https://elena-in-code.github.io/Book-Search-App/"><strong>Library Search App - javaScript</strong></a></h1>
 <img src="https://user-images.githubusercontent.com/30567608/30784493-4402a2e0-a156-11e7-863d-bf707f4c058b.PNG">
 <p>National Library Search App - Find your favorite books!</p>
+<p>A responsive application code with javascript</p>
 
 <h3>Technologies used: </h3>
 <ul>
