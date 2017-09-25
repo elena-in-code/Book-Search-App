@@ -88,8 +88,10 @@ button:hover {
   cursor:pointer;
 }
 /*Result area styling*************************************/
+/*highlight*/
 .hl {
     background: rgba(2,179,228,0.25);
+    text-transform: capitalize;
 }
 /*ul styling*/
 /*main ul with books results*/

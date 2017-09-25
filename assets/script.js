@@ -81,7 +81,7 @@ function displayMatches (){
 		  	var clickedUser = this.innerText
 			var userBooks = books
 			  .filter(book => book.users.some(user => user.name.indexOf(clickedUser) > -1))
-			  .map(book => `<li>${book.title} de ${book.author}`);
+			  .map(book => `<li>${book.title} de ${book.author}</li>`).join('');
 
 		  	userBookList.innerHTML = userBooks;
 		  	//Show the recentUserContainerInfo
@@ -102,7 +102,12 @@ window.addEventListener('keydown',function(e){
 },true);
 //************************************************Cátalogo Completo**********************************************
 btn.addEventListener("click", function() {
-	var fullCatalog =  books.map(book => `<li> Título: ${book.title} <br> Autor: ${book.author}`); 
+	var fullCatalog =  books.map(book => `<li> Título: ${book.title} <br> Autor: ${book.author}</li>`).join(''); 
 	resultContainer.innerHTML = fullCatalog;
+	ClearInput();
 });
+//clear input when calling catalogo completo
+function ClearInput() {
+    searchInput.value = "";
+}
 
