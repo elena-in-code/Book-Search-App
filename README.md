@@ -20,7 +20,7 @@
       <li>ISBN number</li>
     </ul>
   </li>
-  <li>Results will be shown at the same time as you are typing, so search results will be shown directly below, it is not neccesary to press enter or click any other button. (Type Ahead.)</li>
+  <li>Results will be shown at the same time as you are typing, highlighting matching letters, so search results will be shown directly below, it is not neccesary to press enter or click any other button. (Type Ahead.)</li>
   <li>Inside of each search result you will find:
     <ul>
       <li>Book tittle</li>
