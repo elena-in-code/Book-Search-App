@@ -88,7 +88,9 @@ button:hover {
   cursor:pointer;
 }
 /*Result area styling*************************************/
-
+.hl {
+    background: rgba(2,179,228,0.25);
+}
 /*ul styling*/
 /*main ul with books results*/
 li {
@@ -165,7 +167,7 @@ h3 {
 }
 /*hide class from js *************/
 .hide {
-  display: none;
+  display: none; 
 }
 
 /* +++++++++++++++++ media queries +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */

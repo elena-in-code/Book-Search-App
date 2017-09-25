@@ -13,7 +13,7 @@ var searchInput = document.querySelector('.search');
 // var to target X  inside of recentUserContainerInfo
 var btnRemove = document.querySelector('.remove');
 //JSON
-var endpoint = 'https://raw.githubusercontent.com/elena-in-code/books/master/bookcollection.json';
+var datalink = 'https://raw.githubusercontent.com/elena-in-code/books/master/bookcollection.json';
 //empty data var
 var books = [];
 
@@ -22,7 +22,7 @@ searchInput.addEventListener('change', displayMatches);
 searchInput.addEventListener('keyup', displayMatches);
 
 //************************************************************Search**********************************************
-fetch(endpoint)
+fetch(datalink)
 	.then(blob => blob.json())
 	.then(data => books.push(...data))
 
@@ -48,13 +48,19 @@ function displayMatches (){
 			var names = book.users[i].name;
 			nameList.push(names);
 		}
+		//highlight matches when typing
+		var regex = new RegExp(this.value, 'gi');
+		var bookTitle = book.title.replace(regex, `<span class="hl">${this.value}</span>`);
+		var bookAuthor = book.author.replace(regex, `<span class="hl">${this.value}</span>`);
+		var isbnNumber= isbn.replace(regex, `<span class="hl">${this.value}</span>`);
+		var genretype= genre.replace(regex, `<span class="hl">${this.value}</span>`);
 		return `
 				<li>
 					<span class="name"> 
-						 Título: ${book.title} <br>
-						 Autor: ${book.author} <br>
-						 ISBN: ${isbn} <br> 
-						 Género: ${genre} <br>
+						 Título: ${bookTitle} <br>
+						 Autor: ${bookAuthor} <br>
+						 ISBN: ${isbnNumber} <br> 
+						 Género: ${genretype} <br>
 						 Usuarios que han visitado recientemente este recurso: <br>
 						 <ul class="recentUsers">
 						 	<li class="individualUsers">${nameList[0]}</li> 
