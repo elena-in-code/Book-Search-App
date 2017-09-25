@@ -54,8 +54,7 @@ function displayMatches (){
 		var bookAuthor = book.author.replace(regex, `<span class="hl">${this.value}</span>`);
 		var isbnNumber= isbn.replace(regex, `<span class="hl">${this.value}</span>`);
 		var genretype= genre.replace(regex, `<span class="hl">${this.value}</span>`);
-		return `
-				<li>
+		return `<li>
 					<span class="name"> 
 						 Título: ${bookTitle} <br>
 						 Autor: ${bookAuthor} <br>
@@ -68,8 +67,7 @@ function displayMatches (){
 						 	<li class="individualUsers">${nameList[2]}</li>
 						 </ul>
 					</span>
-				</li>
-		`;
+				</li>`;
 	}).join('');
 	resultContainer.innerHTML = html;
 	
@@ -94,12 +92,12 @@ btnRemove.addEventListener("click", function() {
 	recentUserContainerInfo.classList.add("hide");
 });
 //disable enter when searching
-window.addEventListener('keydown',function(e){
-	if(e.keyIdentifier=='U+000A'||e.keyIdentifier=='Enter'||e.keyCode==13 ||e.keyCode === 10){
-			e.preventDefault();
-			return false;
-	}
-},true);
+window.addEventListener('keydown', function(e) {
+        if (e.keyIdentifier == 'U+000A' || e.keyIdentifier == 'Enter' || e.keyCode == 13) {
+                e.preventDefault();
+                return false;
+            }
+    }, true);
 //************************************************Cátalogo Completo**********************************************
 btn.addEventListener("click", function() {
 	var fullCatalog =  books.map(book => `<li> Título: ${book.title} <br> Autor: ${book.author}</li>`).join(''); 

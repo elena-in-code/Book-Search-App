@@ -48,7 +48,7 @@ h1{
   transition: 0.2s ease;
 }
 input {
-  width: 200px;
+  width: 215px;
   height: 30px;
   font-size: .8em;
   text-align: center;
@@ -62,6 +62,10 @@ input:focus {
   box-shadow: 0px 20px 7px -15px rgba(0,0,0,.15);
   transition: all 0.18s ease;
   color: rgba(46,61,73,0.75);
+}
+input::placeholder{
+  color: rgba(163,163,163,.9);
+  font-size: 1em;
 }
 [placeholder]:focus::-webkit-input-placeholder {
   color: transparent;
@@ -173,7 +177,7 @@ h3 {
 }
 
 /* +++++++++++++++++ media queries +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-@media screen and (max-width: 1020px) {
+@media screen and (max-width: 1000px) {
   .search-area {
     padding: 10px;
     flex-wrap: nowrap;
